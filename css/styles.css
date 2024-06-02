@@ -190,7 +190,8 @@ body { font-family: "Poppins", sans-serif; }
 }
 
 .modal__figure {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   height: 200px;
   margin-bottom: 1.5rem;
   aspect-ratio: 1 / 1;
