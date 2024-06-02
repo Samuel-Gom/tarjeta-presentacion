@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-background-primary: #060ea8;
+  --color-text: #000000;
+  --color-text-secondary: #ffffff;
+}
+
+body { font-family: "Poppins", sans-serif; }
+
+/* CARD */
+.card {
+  width: 100%;
+  max-width: 450px;
+  margin-inline: auto;
+}
+
+.card__header {
+  height: 150px;
+  padding-top: 2rem;
+  font-size: .9rem;
+  font-weight: bold;
+  color: var(--color-text-secondary);
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--color-background-primary);
+}
+
+.card__content {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.card__perfil {
+  width: 150px;
+  height: 150px;
+  margin-top: -75px;
+  margin-bottom: 1.5rem;
+  margin-inline: auto;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+.card__name {
+  margin-bottom: .5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.card__job,
+.card__company {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.card__company { margin-bottom: 2rem; }
+
+.card__options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .3rem;
+}
+
+.option__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  color: var(--color-text-secondary);
+  background-color: var(--color-background-primary);
+  border: 1px solid transparent;
+  border-radius: 50%;
+  outline: none;
+  transition: color .5s, background-color .5s, border-color .5s, box-shadow .3s;
+
+  &:hover,
+  &:focus {
+    color: var(--color-background-primary);
+    background-color: #ffffff;
+    border-color: var(--color-background-primary);
+  }
+
+  &:active {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.option__icon i { font-size: 1.1rem; }
+
+.option__name {
+  font-size: .8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.card__cta {
+  width: 100%;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--color-background-primary);
+  background-color: #ffffff;
+  border: 1px solid var(--color-background-primary);
+  border-radius: .8rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color .3s, box-shadow .3s, transform .3s;
+
+  &:hover,
+  &:focus {
+    border-color: transparent;
+    transform: translateY(-.15rem);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: scale(.99);
+  }
+}
+
+.card__footer {
+  padding-block: 1rem;
+  background-color: var(--color-background-primary); 
+}
+
+.card__small {
+  display: block;
+  width: 90%;
+  margin-inline: auto;
+  font-size: .8rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.card__promo { color: #00ffff;}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  padding: 3rem;
+  padding-top: 5.5rem;
+  border-radius: 2.5rem;
+  border: none;
+  outline: none;
+
+  /* Pseudoelemento propio del elemento dialogs */
+  &::backdrop {
+    background-color: #21212199;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 2.5rem;
+  right: 3rem;
+  font-size: 1.25rem;
+  color: var(--color-text);
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform .3s;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+}
+
+.modal__figure {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1.5rem;
+  aspect-ratio: 1 / 1;
+}
+
+.modal__img { 
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modal__text {
+  font-size: .9rem;
+  font-weight: bold;
+  color: var(--color-text);
+  text-align: center;
+}
