@@ -169,10 +169,36 @@ body {
   border-radius: 2.5rem;
   border: none;
   outline: none;
+  opacity: 0;
+  transform: translateY(-15%);
+  transition: overlay .3s ease-out, display .3s ease-out, opacity .3s ease-out, transform .3s ease-out;
+  transition-behavior: allow-discrete; /* Para animar el display del dialog y demas, al cerrar */
 
   /* Pseudoelemento propio del elemento dialogs */
   &::backdrop {
     background-color: #21212199;
+    opacity: 0;
+    transition: opacity .3s ease-out;
+  }
+
+  /* Cuando el dialog este abierto, restablecemos los estilos */
+  &[open] {
+    opacity: 1;
+    transform: translateY(0);
+
+    &::backdrop {
+      opacity: 1;
+    }
+
+    /* Estilos iniciales que se aplicaran cuando abramos el dialog, y tenga esa transicion */
+    @starting-style {
+      opacity: 0;
+      transform: translateY(-15%);
+
+      &::backdrop {
+        opacity: 0;
+      }
+    }
   }
 }
 
